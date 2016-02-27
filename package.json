@@ -1,0 +1,25 @@
+{
+  "name": "webmagazine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juankparis/WebMagazine.git"
+  },
+  "keywords": [
+    "magazine",
+    "movies",
+    "peliculas",
+    "series"
+  ],
+  "author": "Juan Carlos Alfonso C <juan.k.paris@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juankparis/WebMagazine/issues"
+  },
+  "homepage": "https://github.com/juankparis/WebMagazine#readme"
+}

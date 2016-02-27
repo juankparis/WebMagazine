@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/juankparis/WebMagazine/issues"
   },
-  "homepage": "https://github.com/juankparis/WebMagazine#readme"
+  "homepage": "https://github.com/juankparis/WebMagazine#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-stylus": "^2.3.0",
+    "gulp-webserver": "^0.9.1",
+    "nib": "^1.1.0"
+  }
 }

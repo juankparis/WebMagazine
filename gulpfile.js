@@ -3,7 +3,11 @@ var gulp = require('gulp'),
 	webserver = require('gulp-webserver'),
 	stylus = require('gulp-stylus'),
 	nib = require('nib'),
-	minifyCSS = require('gulp-minify-css');
+	minifyCSS = require('gulp-minify-css'),
+	browserify = require('browserify'),
+	source = require('vinyl-source-stream'),
+	buffer =require('vinyl-buffer'),
+	uglify = require('gulp-uglifyjs');
 
 config ={
 	rutserver:{
@@ -16,12 +20,12 @@ config ={
 	},
 	styles:{
 		main: 'src/styles/estilos.styl',
-		watch: 'src/styles/**/*.styl',
+		watch: ['src/styles/**/*.styl','src/styles/**/*.css'],
 		output: './build/css'
 	},
 	scripts:{
 		main: 'src/scripts/main.js',
-		watch: 'src/scripts/**/*.html',
+		watch: 'src/scripts/**/*.js',
 		output: './build/js'
 	}
 }
@@ -50,10 +54,20 @@ gulp.task('build:css', function(){
 		.pipe(gulp.dest(config.styles.output));
 });
 
+gulp.task('build:js', function(){
+	return browserify(config.scripts.main)
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(gulp.dest(config.scripts.output));
+});
+
 gulp.task('watch', function(){
 	gulp.watch(config.html.watch, ['build:html']);
 	gulp.watch(config.styles.watch, ['build:css']);
+	gulp.watch(config.scripts.watch, ['build:js']);
 });
 
-gulp.task('build',['build:html', 'build:css']);
+gulp.task('build',['build:html', 'build:css', 'build:js']);
 gulp.task('default', ['server', 'watch', 'build']);

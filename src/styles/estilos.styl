@@ -23,7 +23,7 @@ html, body
 	
 // utilidades
 .U-toggleMenu
-	margin-top 16em
+	margin-top 16.5em
 	
 // header
 .Header
@@ -54,37 +54,37 @@ html, body
 			margin 0.5em 5.8em 0 0
 			vertical-align top
 			& input
+				border none
 				border-radius 0.3em
+				color gris_b
+				max-width 11em
 				padding 0.46em
 				vertical-align top
-				max-width 11em
-				color gris_b
-				border none
 			&Button
-				position: absolute
-				top 0
-				margin 0.36em 3.91em 0 0
-				border-radius 0 0.2em 0.2em 0
 				background verde_a
-				font-size 1.5em
-				padding 0.18em
 				border none
+				border-radius 0 0.2em 0.2em 0
+				font-size 1.5em
+				margin 0.36em 3.91em 0 0
+				padding 0.18em
+				position: absolute
 				right 0
+				top 0
 		& a
-			position absolute
-			top 0
-			right 0
-			margin 0.3em 1.7em 0 0
 			color blanco_a
 			font-size 2em
+			margin 0.3em 1.7em 0 0
+			position absolute
+			right 0
 			text-decoration none
+			top 0
 
 .Menu
 	position absolute
 	right 0
 	top -14em
-	z-index: 100
 	transition all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+	z-index: 100
 	&-lista
 		list-style none
 	&-item
@@ -92,12 +92,12 @@ html, body
 		margin-right 0.3em
 	&-link
 		background gris_trasparente
-		border-radius 0.5em
+		border-radius 0.3em
+		box-shadow 5px 5px 5px rgba(0, 0, 0, .5)
+		color blanco_a
 		padding 1.5em 1em 1em 1em
 		text-decoration none
 		text-shadow 5px 5px 5px rgba(0, 0, 0, .5)
-		box-shadow 5px 5px 5px rgba(0, 0, 0, .5)
-		color blanco_a
 
 /*contenido*/
 .Cont
@@ -134,13 +134,13 @@ html, body
 				box-shadow 1px 5px 5px rgba(0, 0, 0, .5)
 				color blanco_a
 				font-size 1.5em
+				height 25%
+				line-height 75%
 				margin 0 0.5em 0.5em 0
 				padding 0.3em 1em 0.3em 0.5em
 				position absolute
-				line-height 75%
-				width 20%
-				height 25%
 				right 0
+				width 20%
 
 @media screen and (min-width: 720px)
 	body

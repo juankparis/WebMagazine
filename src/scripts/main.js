@@ -25,5 +25,5 @@ var $ = require('jquery');
 		$from.toggleClass("U-toggleBuscar")
 			.find("input").toggleClass("U-toggleWidth");
 	}
-	
+
 }());

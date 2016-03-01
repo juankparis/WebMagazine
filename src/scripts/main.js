@@ -19,7 +19,7 @@ var $ = require('jquery');
 	function abrirBuscar() {
 		$from.toggleClass("U-toggleBuscar");
 	}
-/*
+
 /////////////////////shows //////////////
 
 	var $Cont = $("#Cont");
@@ -91,5 +91,4 @@ var $ = require('jquery');
 			renderShows(shows);
 		}
 	})
-*/
 }());

@@ -2,9 +2,12 @@ var $ = require('jquery');
 	
 	var $Menu = $('#Menu'),
 		$menuClick = $('#menuClick'),
-		$Headerbuscar = $("#Header-buscar");
-		$abrirBuscar = $("#abrirBuscar");
-		$from = $("#from");
+		$Headerbuscar = $("#Header-buscar"),
+		$abrirBuscar = $("#abrirBuscar"),
+		$from = $("#from"),
+		$Leer = $("#leer"),
+		$ContInfo = $(".ContInfo"),
+		$ContInfoMovie = $(".ContInfo-movie");
 
 (function(){
 
@@ -25,7 +28,21 @@ var $ = require('jquery');
 		$from.toggleClass("U-toggleBuscar")
 			.find("input").toggleClass("U-toggleWidth");
 	}
+	
+	// leer series y movies
 
+	$Leer.on('click', leerArticle);
+
+	function leerArticle(){
+		$ContInfo.toggleClass("U-expandirArticleMovie");
+			setTimeout(
+				  function() 
+				  {
+					$ContInfo.toggleClass("U-expandirArticleMovie2")
+					$ContInfoMovie.fadeIn("slow");
+				  }, 300);
+	}
+/*
 /////////////////////shows //////////////
 
 	var $Cont = $("#Cont");
@@ -97,5 +114,5 @@ var $ = require('jquery');
 			renderShows(shows);
 		}
 	})
-
+*/
 }());

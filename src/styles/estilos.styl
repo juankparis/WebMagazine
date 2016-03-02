@@ -36,6 +36,7 @@ html, body
 	color blanco_a
 	margin-bottom 1em
 	position relative
+	z-index 80
 	&-contImg
 		display inline-block
 		height 50px
@@ -139,14 +140,19 @@ html, body
 			width 70%
 			&Title
 				color gris_a
-			&
+			&Autor
 				color gris_b
+				& span
+					color gris_a
+					font-weight bold
+					font-style italic
 			&Button
 				background naranja_a
 				border-radius 0.1em
 				bottom 0
 				box-shadow 1px 5px 5px rgba(0, 0, 0, .5)
 				color blanco_a
+				cursor pointer
 				font-size 1.5em
 				height 25%
 				line-height 75%
@@ -157,8 +163,56 @@ html, body
 				text-shadow 3px 3px 6px rgba(0, 0, 0, .5)
 				width 20%
 
-.experimento
-	transition all 0.3s ease
+.ContInfo
+	background naranja_a
+	border-radius 50%
+	height 0
+	position absolute
+	right 0
+	top 0
+	transition all 0.5s ease
+	box-shadow 0px 2px 5px rgba(0, 0, 0, .75)
+	width 0
+	z-index 2
+	&-movie
+		background blanco_a
+		display none
+		&Info
+			padding 1em
+			&Sumary
+				color gris_a
+				margin 1em 0
+			&Votes
+			&Stars
+				display inline-block
+				color gris_a
+			&Stars
+				position relative
+				bottom 0
+				left 67%
+		& img
+			box-shadow 0 2px 5px rgba(0, 0, 0, .75)
+			height 100%
+			width 100%
+	&-atras
+		background red
+		position fixed
+		right 0 
+		bottom 0
+		margin 0 1.5em 1em 0
+		padding 1em
+		border-radius 50%
+
+.U-expandirArticleMovie
+	border-radius 50% 0 50% 50%
+	height 100%
+	margin 17% 2% 0 2%
+	width 96%
+
+.U-expandirArticleMovie2
+	border-radius 1% !important
+	height auto !important
+	margin-bottom 4em
 
 @media screen and (min-width: 720px)
 	body

@@ -7,7 +7,8 @@ var $ = require('jquery');
 		$from = $("#from"),
 		$Leer = $("#leer"),
 		$ContInfo = $(".ContInfo"),
-		$ContInfoMovie = $(".ContInfo-movie");
+		$ContInfoMovie = $(".ContInfo-movie"),
+		$ContInfoAtras = $("#ContInfo-atras");
 
 (function(){
 
@@ -36,12 +37,22 @@ var $ = require('jquery');
 	function leerArticle(){
 		$ContInfo.toggleClass("U-expandirArticleMovie");
 			setTimeout(
-				  function() 
-				  {
-					$ContInfo.toggleClass("U-expandirArticleMovie2")
+				function() {
+					$ContInfo.toggleClass("U-expandirArticleMovie2");
 					$ContInfoMovie.fadeIn("slow");
-				  }, 300);
+				}, 300);
 	}
+
+	$ContInfoAtras.on('click', cerrarArticle);
+
+	function cerrarArticle() {
+		$ContInfo.toggleClass("U-expandirArticleMovie2");
+		$ContInfoMovie.fadeOut("slow");
+			setTimeout(
+				function(){
+					$ContInfo.toggleClass("U-expandirArticleMovie");
+				}, 300);
+	}		
 /*
 /////////////////////shows //////////////
 

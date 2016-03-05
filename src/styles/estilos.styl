@@ -40,9 +40,10 @@ html, body
 	z-index 80
 	&-contImg
 		display inline-block
-		height 50px
-		margin 0 0 0 0.5em
-		width 50px
+		height 30px
+		margin 0 0 0 0.3em
+		padding 0.3em
+		width 70px
 		img 
 			width 100%
 	&-movile
@@ -117,7 +118,7 @@ html, body
 
 /*contenido*/
 .Cont
-	// display relative
+	// margin 0 auto
 	&-article
 		background blanco_b
 		box-shadow 0px 0px 10px rgba(0, 0, 0, .75)
@@ -146,7 +147,7 @@ html, body
 				& span
 					color gris_a
 					font-style italic
-					font-weight bold
+					font-size 1.05em
 			&Button
 				background naranja_a
 				border-radius 0.1em
@@ -154,11 +155,11 @@ html, body
 				box-shadow 1px 5px 5px rgba(0, 0, 0, .5)
 				color blanco_a
 				cursor pointer
-				font-size 1.5em
+				font-size 1.2em
 				height 25%
 				line-height 75%
-				margin 0 0.5em 0.5em 0
-				padding 0.3em 1em 0.3em 0.5em
+				margin 0 0.3em 0.5em 0
+				padding 0.33em 1.3em 0.33em 0.8em
 				position absolute
 				right 0
 				text-shadow 3px 3px 6px rgba(0, 0, 0, .5)
@@ -219,5 +220,18 @@ html, body
 	margin-bottom 5em
 
 @media screen and (min-width: 720px)
-	body
-		// background red
+	.Cont
+		margin 0 auto
+		max-width 70%
+		&-article
+			margin 0 auto
+			margin-top 0.5em
+
+@media screen and (min-width: 960px)
+	.Cont
+		margin 0 auto
+		max-width 90%
+		&-article
+			display inline-block
+			margin 0.5em 0.5em
+			width 48%

@@ -1,64 +1,10 @@
 var $ = require('jquery');
+
+ var ajax = function () {
+	/////////////////////shows //////////////
 	
-	var $Menu = $('#Menu'),
-		$menuClick = $('#menuClick'),
-		$Headerbuscar = $("#Header-buscar"),
-		$abrirBuscar = $("#abrirBuscar"),
-		$from = $("#from"),
-		$Leer = $("#leer"),
-		$ContInfo = $("#ContInfo"),
-		$ContInfoMovie = $(".ContInfo-movie"),
-		$ContInfoAtras = $("#ContInfo-atras");
-
-(function(){
-
-	var ajax = require('./lib/ajax');
-	ajax();
-
-	//menu
-	$menuClick.on('click', menuAbrir);
-
-	function menuAbrir(){
-		$Menu.toggleClass("U-toggleMenu");
-	}
-	//barra de buscar
-	$abrirBuscar.on('click', abrirBuscar);
-
-	function abrirBuscar() {
-		$from.toggleClass("U-toggleBuscar")
-			.find("input").toggleClass("U-toggleWidth");
-	}
-
-
-	setTimeout(function() {
-
-		$Leer.on('click', leerArticle);
-
-		function leerArticle(){
-			event.preventDefault();
-			$ContInfo.toggleClass("U-expandirArticleMovie");
-				setTimeout(
-					function() {
-						$ContInfo.toggleClass("U-expandirArticleMovie2");
-						$ContInfoMovie.fadeIn("slow");
-					}, 300);
-		}
-
-		$ContInfoAtras.on('click', cerrarArticle);
-
-		function cerrarArticle() {
-			$ContInfo.toggleClass("U-expandirArticleMovie2");
-			$ContInfoMovie.fadeOut("slow");
-				setTimeout(
-					function(){
-						$ContInfo.toggleClass("U-expandirArticleMovie");
-					}, 300);
-		}
-	},1000);
-/*
-/////////////////////shows //////////////
-
-	var $Cont = $("#Cont");
+	var $Cont = $("#Cont"),
+		$Headerbuscar = $("#Header-buscar");
 
 	function renderShows(shows) {
 		shows.forEach(function(show){
@@ -170,8 +116,6 @@ var $ = require('jquery');
 		}
 	})
 
-	// $(".Cont-article").live('click', function () {
-	// 	alert("me hizieron click");
-	// });
-*/
-}());
+}
+
+module.exports = ajax;

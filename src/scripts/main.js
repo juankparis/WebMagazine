@@ -42,6 +42,7 @@ var $ = require('jquery');
 		$Cont.find(".Cont-inicio").addClass("U-borderEntrar");
 		$Cont.find(".Cont-inicioHeader").addClass("U-displayNone");
 		$Header.removeClass("U-z-index")
+		$Cont.find(".Cont-contCreditos").removeClass("U-topCero");
 			setTimeout(
 					function() {
 						$Header.removeClass("U-creditos");
@@ -58,6 +59,7 @@ var $ = require('jquery');
 		$Cont.find(".Cont-inicioInfo").fadeIn();
 		$Cont.find(".Cont-inicio").removeClass("U-widhtCero");
 		$Cont.find(".Cont-inicioLogo").removeClass("U-logo");
+		$Cont.find(".Cont-contCreditos").removeClass("U-topCero");		
 		$Header.removeClass("U-z-index");
 			setTimeout(
 					function () {
@@ -84,6 +86,7 @@ var $ = require('jquery');
 		setTimeout(
 			function(){
 				$Cont.find(".Cont-inicio").removeClass("U-borderEntrar");
+				$Cont.find(".Cont-contCreditos").addClass("U-topCero");
 			},300);
 	}
 

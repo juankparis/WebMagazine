@@ -18,8 +18,8 @@ var $ = require('jquery');
 
 (function(){
 
-	// var ajax = require('./lib/ajax');
-	// ajax();
+	var ajax = require('./lib/ajax');
+	ajax();
 
 	//menu
 	$menuClick.on('click', menuAbrir);

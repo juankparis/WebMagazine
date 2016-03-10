@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	browserify = require('browserify'),
 	source = require('vinyl-source-stream'),
 	buffer =require('vinyl-buffer'),
-	uglify = require('gulp-uglifyjs');
+	uglify = require('gulp-uglifyjs'),
+	imageOP = require('gulp-image-optimization');
 
 config ={
 	rutserver:{
@@ -27,6 +28,10 @@ config ={
 		main: 'src/scripts/main.js',
 		watch: 'src/scripts/**/*.js',
 		output: './build/js'
+	},
+	images:{
+		watch: ['build/images/**/*.png','build/images/**/*jpg'],
+		output: 'dist/images'
 	}
 }
 
@@ -67,6 +72,17 @@ gulp.task('watch', function(){
 	gulp.watch(config.html.watch, ['build:html']);
 	gulp.watch(config.styles.watch, ['build:css']);
 	gulp.watch(config.scripts.watch, ['build:js']);
+	gulp.watch(config.images.watch, ['imageOP']);
+});
+
+gulp.task('imageOP', function(){
+	gulp.src(config.images.watch)
+		.pipe(imageOP({
+			optimizationLevel: 5,
+	        progressive: true,
+	        interlaced: true
+		}))
+		.pipe(gulp.dest(config.images.output));
 });
 
 gulp.task('build',['build:html', 'build:css', 'build:js']);

@@ -2,3 +2,4 @@ node_modules
 build/images
 build/fonts
 dist/fonts
+dist/images

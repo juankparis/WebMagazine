@@ -77,7 +77,6 @@ gulp.task('watch', function(){
 	gulp.watch(config.html.watch, ['build:html']);
 	gulp.watch(config.styles.watch, ['build:css']);
 	gulp.watch(config.scripts.watch, ['build:js']);
-	gulp.watch(config.images.watch, ['imageOP']);
 });
 
 gulp.task('imageOP', function(){
@@ -97,5 +96,5 @@ gulp.task('smoosh', function(){
 		.pipe(gulp.dest(config.smooshtml.output));
 });
 
-gulp.task('build',['build:html', 'build:css', 'build:js', 'imageOP']);
-gulp.task('default', ['server', 'watch', 'build']);
+gulp.task('build',['build:html', 'build:css', 'build:js']);
+gulp.task('default', ['server', 'build']);

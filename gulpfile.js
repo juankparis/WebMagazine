@@ -97,4 +97,4 @@ gulp.task('smoosh', function(){
 });
 
 gulp.task('build',['build:html', 'build:css', 'build:js']);
-gulp.task('default', ['server', 'build']);
+gulp.task('default', ['server','watch', 'build']); ///mirar watch

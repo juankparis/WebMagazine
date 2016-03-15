@@ -292,7 +292,7 @@ html, body
 			background-size cover
 		&-article
 			margin 0 auto
-			margin-top 0.5em
+			margin-top 0.5em			
 
 @media screen and (min-width: 960px)
 	.Cont
@@ -302,3 +302,16 @@ html, body
 			display inline-block
 			margin 0.5em 0.5em
 			width 48%
+			
+@media (max-width: 1200px) and (orientation: landscape)
+	.Cont-inicioLogo
+		height 100px
+		margin 0 auto
+		margin-top 5vh
+		width 200px
+@media (max-width: 720px) and (orientation: landscape)
+	.Cont-inicioLogo
+		height 23px
+		margin 0 auto
+		margin-top 2vh
+		width 53px

@@ -40,12 +40,12 @@ var $ = require('jquery');
 
 	function entrar(){
 		$Cont.find(".Cont-inicio").addClass("U-borderEntrar");
-		$Cont.find(".Cont-inicioHeader").addClass("U-displayNone");
 		$Header.removeClass("U-z-index")
 		$Cont.find(".Cont-contCreditos").removeClass("U-topCero");
 			setTimeout(
 					function() {
 						$Header.removeClass("U-creditos");
+						$Cont.find(".Cont-inicioHeader").addClass("U-displayNone");
 						$Headerbuscar.removeClass("U-visibility");
 						$Cont.find(".Cont-inicioInfo").fadeOut();
 						$Cont.find(".Cont-inicio").addClass("U-widhtCero");

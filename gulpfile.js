@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 
 config ={
 	rutserver:{
-		watch: './build'
+		watch: './dist'
 	},
 	html:{
 		main: './src/index.html',

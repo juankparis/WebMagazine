@@ -182,7 +182,13 @@ html, body
 			padding 0.8em 3.5em
 			text-shadow 3px 3px 6px rgba(0, 0, 0, .5)
 			text-transform uppercase
-			// width 50%
+	&-text
+		background blanco_b
+		box-shadow 0px 0px 10px rgba(0, 0, 0, .3) inset
+		margin 0.5em 0
+		padding 0.3em
+		text-align center
+		color gris_b
 	&-article
 		background blanco_b
 		box-shadow 0px 0px 10px rgba(0, 0, 0, .75)
@@ -297,7 +303,9 @@ html, body
 			margin-top 0.5em
 	.ContInfo
 		margin 10vh 15% 0 15%
-		max-width 70%			
+		max-width 70%
+		&-atras
+			margin-right 16%			
 
 @media screen and (min-width: 960px)
 	.Cont
@@ -309,7 +317,13 @@ html, body
 			width 48%
 	.ContInfo
 		// margin 10vh 25% 0 25%
-		// max-width 50%
+		&-movie img
+			display inline-block
+			width 50%
+		&-movieInfo
+			display inline-block
+			vertical-align top
+			width 40%
 			
 @media (max-width: 1200px) and (orientation: landscape)
 	.Cont-inicioLogo

@@ -100,7 +100,7 @@ var $ = require('jquery');
 	$.ajax({
 		url: 'http://api.tvmaze.com/shows',
 		success: function(shows, textStatus, xhr){
-			console.log(shows);
+			// console.log(shows);
 			// var $Cont = $("#Cont");
 			$Cont.find('.loader').remove();
 			// shows.forEach(function(show){

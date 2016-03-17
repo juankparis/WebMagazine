@@ -91,7 +91,7 @@ var $ = require('jquery');
 	}
 
 	$Cont.on('click', '.Cont-articleInfoButton', function(e){
-		event.preventDefault();
+		e.preventDefault();
 		var $contThis = $(this);
 		var pos = $contThis.offset();
 		var posY = (e.pageY)
@@ -109,8 +109,8 @@ var $ = require('jquery');
 				}, 300);
 	});
 
-	$Cont.on('click', '.ContInfo-atras', function(){
-		event.preventDefault();
+	$Cont.on('click', '.ContInfo-atras', function(e){
+		e.preventDefault();
 		var $contThisBack = $(this);
 		console.log($(this).parent().parent());
 

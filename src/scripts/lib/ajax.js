@@ -10,7 +10,7 @@ var $ = require('jquery');
 		shows.forEach(function(show){
 			var article =template
 				.replace(':name:', show.name)
-				.replace(':img:', show.image.medium)
+				.replace(':img:', show.image.original)
 				.replace(':img alt:', show.name + " logo")
 				.replace(':language:', show.language);
 
@@ -19,7 +19,7 @@ var $ = require('jquery');
 
 			var article2 =template2
 				.replace(':name:', show.name)
-				.replace(':img:', show.image.original)
+				.replace(':imgl:', show.image.original)
 				.replace(':img alt:', show.name + " logo")
 				.replace(':language:', show.language)
 				.replace(':genres:', show.genres)
@@ -77,7 +77,7 @@ var $ = require('jquery');
 
 	var template2='<article class="ContInfo" id="ContInfo">' +
 			'<div class="ContInfo-movie">' +
-				'<img src=":img:" alt=":img alt:" width="50" height="50">' +
+				'<img src=":imgl:" alt=":img alt:" width="50" height="50">' +
 				'<div class="ContInfo-movieInfo">' +
 					'<h2 class="Cont-articleInfoTitle">:name:</h2>' +
 					'<h4 class="Cont-articleInfoAutor">:language:</h4>' +

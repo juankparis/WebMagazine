@@ -19,7 +19,7 @@ html, body
 	color black
 	font-family arial
 	font-size 16px
-	
+
 *
 	margin 0
 	padding 0
@@ -53,6 +53,7 @@ html, body
 	visibility hidden !important
 .U-topCero
 	top 0
+
 // header
 .Header
 	background verde_a
@@ -274,11 +275,12 @@ html, body
 .U-expandirArticleMovie
 	border-radius 50% 0 50% 50%
 	height 100%
-	margin 17% 2% 0 2%
-	width 96%
+	width 100%
+	// margin-top 10vh
 
 .U-expandirArticleMovie2
-	border-radius 1% !important
+	border-radius 0 !important
+	width 100% !important
 	height auto !important
 	margin-bottom 5em
 
@@ -292,7 +294,10 @@ html, body
 			background-size cover
 		&-article
 			margin 0 auto
-			margin-top 0.5em			
+			margin-top 0.5em
+	.ContInfo
+		margin 10vh 15% 0 15%
+		max-width 70%			
 
 @media screen and (min-width: 960px)
 	.Cont
@@ -302,6 +307,9 @@ html, body
 			display inline-block
 			margin 0.5em 0.5em
 			width 48%
+	.ContInfo
+		// margin 10vh 25% 0 25%
+		// max-width 50%
 			
 @media (max-width: 1200px) and (orientation: landscape)
 	.Cont-inicioLogo

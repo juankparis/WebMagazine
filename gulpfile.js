@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	minifyHTML = require('gulp-minify-html'),
 	webserver = require('gulp-webserver'),
+	livereload =require('gulp-livereload'),
 	stylus = require('gulp-stylus'),
 	nib = require('nib'),
 	minifyCSS = require('gulp-minify-css'),
@@ -13,7 +14,7 @@ var gulp = require('gulp'),
 
 config ={
 	rutserver:{
-		watch: './dist'
+		watch: './build'
 	},
 	html:{
 		main: './src/index.html',
@@ -51,7 +52,8 @@ gulp.task('server', function(){
 gulp.task('build:html', function(){
 	gulp.src(config.html.main)
 		.pipe(minifyHTML())
-		.pipe(gulp.dest(config.html.output));
+		.pipe(gulp.dest(config.html.output))
+		.pipe(livereload());
 });
 
 gulp.task('build:css', function(){
@@ -61,7 +63,8 @@ gulp.task('build:css', function(){
 			'include css': true
 		}))
 		.pipe(minifyCSS())
-		.pipe(gulp.dest(config.styles.output));
+		.pipe(gulp.dest(config.styles.output))
+		.pipe(livereload());
 });
 
 gulp.task('build:js', function(){
@@ -70,10 +73,12 @@ gulp.task('build:js', function(){
 		.pipe(source('bundle.js'))
 		.pipe(buffer())
 		.pipe(uglify())
-		.pipe(gulp.dest(config.scripts.output));
+		.pipe(gulp.dest(config.scripts.output))
+		.pipe(livereload());
 });
 
 gulp.task('watch', function(){
+	livereload.listen();
 	gulp.watch(config.html.watch, ['build:html']);
 	gulp.watch(config.styles.watch, ['build:css']);
 	gulp.watch(config.scripts.watch, ['build:js']);

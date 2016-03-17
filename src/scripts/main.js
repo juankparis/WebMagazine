@@ -1,11 +1,11 @@
 var $ = require('jquery');
 	
-	var $Header = $('#Header'),
-		$Menu = $('#Menu'),
-		$inicio = $('#inicio'),
-		$home = $('#home'),
-		$creditos = $('#creditos'),
-		$menuClick = $('#menuClick'),
+	var $Header = $("#Header"),
+		$Menu = $("#Menu"),
+		$inicio = $("#inicio"),
+		$home = $("#home"),
+		$creditos = $("#creditos"),
+		$menuClick = $("#menuClick"),
 		$Headerbuscar = $("#Header-buscar"),
 		$abrirBuscar = $("#abrirBuscar"),
 		$from = $("#from"),
@@ -54,7 +54,7 @@ var $ = require('jquery');
 	}
 
 	$inicio.on('click', inicio);
-	
+
 	function inicio(){
 		$Cont.find(".Cont-inicioInfo").fadeIn();
 		$Cont.find(".Cont-inicio").removeClass("U-widhtCero");
@@ -90,27 +90,36 @@ var $ = require('jquery');
 			},300);
 	}
 
-	$Leer.on('click', leerArticle);
-
-	function leerArticle(event){
+	$Cont.on('click', '.Cont-articleInfoButton', function(e){
 		event.preventDefault();
-		$ContInfo.toggleClass("U-expandirArticleMovie");
-			setTimeout(
-				function() {
-					$ContInfo.toggleClass("U-expandirArticleMovie2");
-					$ContInfoMovie.fadeIn("slow");
-				}, 300);
-	}
+		var $contThis = $(this);
+		var pos = $contThis.offset();
+		var posY = (e.pageY)
+		posY -=90;
+		// console.log(posY);
+		$contThis.parent().parent().next(".ContInfo").css("margin-top", posY);
 
-	$ContInfoAtras.on('click', cerrarArticle);
-
-	function cerrarArticle() {
-		$ContInfo.toggleClass("U-expandirArticleMovie2");
-		$ContInfoMovie.fadeOut("slow");
-			setTimeout(
+		// console.log($(this).parent().parent().next('.ContInfo'));
+		$contThis.parent().parent().next(".ContInfo").addClass("U-expandirArticleMovie");
+		setTimeout(
 				function(){
-					$ContInfo.toggleClass("U-expandirArticleMovie");
+					// console.log($cont_this.parent().parent().next('.ContInfo'));
+					$contThis.parent().parent().next(".ContInfo").addClass("U-expandirArticleMovie2");
+					$contThis.parent().parent().next(".ContInfo").children().fadeIn("slow");
 				}, 300);
-	}
+	});
+
+	$Cont.on('click', '.ContInfo-atras', function(){
+		event.preventDefault();
+		var $contThisBack = $(this);
+		console.log($(this).parent().parent());
+
+		$contThisBack.parent().parent().removeClass("U-expandirArticleMovie2");
+		$contThisBack.parent().parent().children().fadeOut('slow');
+		setTimeout(
+				function(){
+					$contThisBack.parent().parent().removeClass("U-expandirArticleMovie");
+				}, 300);
+	});
 
 }());

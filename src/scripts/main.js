@@ -1,6 +1,7 @@
 var $ = require('jquery');
 	
 	var $Header = $("#Header"),
+		$HeadericonMenuInput = $( ".Header-iconMenuInput" ),
 		$Menu = $("#Menu"),
 		$inicio = $("#inicio"),
 		$home = $("#home"),
@@ -17,6 +18,9 @@ var $ = require('jquery');
 		$ContInfoAtras = $("#ContInfo-atras");
 
 (function(){
+
+	var loadCSS = require('./lib/loadCSS');
+	loadCSS('https://fonts.googleapis.com/css?family=Open+Sans|Lato:700italic');
 
 	var ajax = require('./lib/ajax');
 	ajax();
@@ -39,6 +43,8 @@ var $ = require('jquery');
 	$home.on('click', entrar); 
 
 	function entrar(){
+		$Menu.removeClass("U-toggleMenu");
+		$HeadericonMenuInput.prop( "checked", false );
 		$Cont.find(".Cont-inicio").addClass("U-borderEntrar");
 		$Header.removeClass("U-z-index")
 		$Cont.find(".Cont-contCreditos").removeClass("U-topCero");
@@ -56,6 +62,8 @@ var $ = require('jquery');
 	$inicio.on('click', inicio);
 
 	function inicio(){
+		$Menu.removeClass("U-toggleMenu");
+		$HeadericonMenuInput.prop( "checked", false );
 		$Cont.find(".Cont-inicioInfo").fadeIn();
 		$Cont.find(".Cont-inicio").removeClass("U-widhtCero");
 		$Cont.find(".Cont-inicioLogo").removeClass("U-logo");
@@ -79,6 +87,8 @@ var $ = require('jquery');
 	$creditos.on('click', creditos);
 	
 	function creditos(){
+		$Menu.removeClass("U-toggleMenu");
+		$HeadericonMenuInput.prop( "checked", false );
 		$Header.addClass("U-creditos");
 		$Headerbuscar.addClass("U-visibility");
 		$Cont.find(".Cont-inicio").removeClass("U-widhtCero");
@@ -112,7 +122,7 @@ var $ = require('jquery');
 	$Cont.on('click', '.ContInfo-atras', function(e){
 		e.preventDefault();
 		var $contThisBack = $(this);
-		console.log($(this).parent().parent());
+		// console.log($(this).parent().parent());
 
 		$contThisBack.parent().parent().removeClass("U-expandirArticleMovie2");
 		$contThisBack.parent().parent().children().fadeOut('slow');

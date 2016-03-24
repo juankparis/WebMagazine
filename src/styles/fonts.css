@@ -35,6 +35,9 @@
     position: relative;
     top: 0.2em
 }
+.icon-sad:before {
+    content: "\e908";
+}
 .icon-profile:before {
     content: "\e905";
     font-size: 2em;
@@ -59,35 +62,3 @@
 .icon-search:before {
     content: "\e901";
 }
-/*
-.icon-camera:before {
-    content: "\e900";
-}
-.icon-plus:before {
-    content: "\e902";
-}
-.icon-profile:before {
-    content: "\e905";
-}
-.icon-arrow-right-thick:before {
-    content: "\e906";
-}
-.icon-chevron-right-outline:before {
-    content: "\e907";
-}
-.icon-plus-circle:before {
-    content: "\f055";
-}
-.icon-plus2:before {
-    content: "\f067";
-}
-.icon-chevron-thin-right:before {
-    content: "\e903";
-}
-.icon-home3:before {
-    content: "\e904";
-}
-.icon-search:before {
-    content: "\e901";
-}
-*/

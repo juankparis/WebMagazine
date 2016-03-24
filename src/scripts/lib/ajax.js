@@ -41,13 +41,16 @@ var $ = require('jquery');
 // buscar shows
 	$Headerbuscar.find("form").submit(function(ev){
 		ev.preventDefault();
-		// alert("me hizieron click");
+
 		var busqueda = $(this)
 			.find('input[type="text"]')
 			.val();
+		var borrar = $(this)
+			.find('input[type="text"]')
+			.val('');
 			// alert("buscaron " + busqueda);
 			$Cont.find('.Cont-article').remove();
-			var $loader = $('<div class="loader"></div>')
+			var $loader = $('<div class="loader"></div>');
 			$loader.appendTo($Cont);
 		$.ajax({
 			url: 'http://api.tvmaze.com/search/shows',
@@ -55,10 +58,15 @@ var $ = require('jquery');
 			success: function (res, textStatus, xhr) {
 				// console.log(res);
 				$loader.remove();
-				var shows = res.map(function(el){
-					return el.show;
-				})
-				renderShows(shows);
+				if(res == 0){
+					template3.appendTo($Cont);
+				}else{
+					template3.remove();
+					var shows = res.map(function(el){
+						return el.show;
+					})
+					renderShows(shows);
+				}
 			}
 		})
 	});
@@ -89,12 +97,17 @@ var $ = require('jquery');
 					'<div class="ContInfo-movieInfoSumary">' +
 						'<p>:summary:</p>' +
 					'</div>' +
-					'<h4 class="ContInfo-movieInfoVotes"><span>Votes:</span>:weight:</h4>' +
+					'<h4 class="ContInfo-movieInfoVotes"><span>Votes: </span>:weight:</h4>' +
 					'<h4 class="ContInfo-movieInfoStars icon-star">:rating:</h4>' +
 				'</div>' +
 				'<div class="ContInfo-atras icon-collapse" id="ContInfo-atras"></div>' +
 			'</div>' +
 		'</article>';
+
+	var template3= $('<div class="SearchNone">' +
+			'<h4 class="SearchNone-face icon-sad"></h4>' +
+			'<h4 class="SearchNone-info">lo sentimos no hemos encontrado en nuestra base de datos esta serie, intenta con las iniciales u otras series mas que están esperando para ti</h4>' +
+		'</div>');
 
 // shows
 	$.ajax({

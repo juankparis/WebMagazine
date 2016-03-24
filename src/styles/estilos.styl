@@ -3,6 +3,7 @@
 @import "fonts.css"
 @import "loader.css"
 @import "creditos.styl"
+@import "searchnone.styl"
 
 blanco_a = #ffffff
 blanco_b = #F4F1F1
@@ -17,7 +18,7 @@ naranja_a = #FF6633
 html, body 
 	background blanco_a
 	color black
-	font-family arial
+	font-family: 'Open Sans', arial;
 	font-size 16px
 
 *
@@ -92,8 +93,8 @@ html, body
 				background verde_a
 				border none
 				border-radius 0 0.2em 0.2em 0
-				font-size 1.5em
-				margin 0.0351em 0.05em 0 0
+				font-size 1.65em
+				margin 0.0352em 0.05em 0 0
 				padding 0.16em
 				position: absolute
 				right 0
@@ -149,6 +150,10 @@ html, body
 		transition all 0.5s ease
 		width 100%
 		z-index 100
+		& h1
+			font-family: arial , sans-serif;
+		& h3
+			font-family: 'Lato', sans-serif;
 		&Header
 			background verde_trasnparente
 			box-shadow 0px 3px 5px rgba(0, 0, 0, .5)
@@ -182,13 +187,6 @@ html, body
 			padding 0.8em 3.5em
 			text-shadow 3px 3px 6px rgba(0, 0, 0, .5)
 			text-transform uppercase
-	&-text
-		background blanco_b
-		box-shadow 0px 0px 10px rgba(0, 0, 0, .3) inset
-		margin 0.5em 0
-		padding 0.3em
-		text-align center
-		color gris_b
 	&-article
 		background blanco_b
 		box-shadow 0px 0px 10px rgba(0, 0, 0, .75)
@@ -214,6 +212,7 @@ html, body
 				color gris_a
 			&Autor
 				color gris_b
+				font-family: 'Lato', sans-serif;
 				& span
 					color gris_a
 					font-style italic
@@ -251,6 +250,13 @@ html, body
 		display none
 		&Info
 			padding 1em
+			& h4:nth-child(2)
+				color gris_b
+				font-family: 'Lato', sans-serif;
+			& h4:nth-child(9)
+			& h4:nth-child(10)
+				font-family: 'Lato', sans-serif;
+				font-size 1.3em
 			&Sumary
 				color gris_a
 				margin 1em 0
@@ -259,8 +265,8 @@ html, body
 				color gris_a
 				display inline-block
 			&Stars
-				bottom 0
-				left 60%
+				bottom 0.4em
+				float right
 				position relative
 		& img
 			box-shadow 0 2px 5px rgba(0, 0, 0, .75)
@@ -270,13 +276,13 @@ html, body
 		background naranja_a
 		border-radius 50%
 		bottom 0
-		box-shadow 0px 4px 6px rgba(0,0,0,.5)
+		box-shadow 0px 4px 8px rgba(0,0,0,.4)
 		color blanco_a
 		font-size 2em
 		margin 0 0.5em 0.4em 0
 		padding 0.4em
 		position fixed
-		right 0 
+		right 0
 
 .U-expandirArticleMovie
 	border-radius 50% 0 50% 50%
@@ -315,6 +321,7 @@ html, body
 			display inline-block
 			margin 0.5em 0.5em
 			width 48%
+			padding 0.3%
 	.ContInfo
 		// margin 10vh 25% 0 25%
 		&-movie img
@@ -323,7 +330,7 @@ html, body
 		&-movieInfo
 			display inline-block
 			vertical-align top
-			width 40%
+			width 45%
 			
 @media (max-width: 1200px) and (orientation: landscape)
 	.Cont-inicioLogo

@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
- var ajax = function () {
+var ajax = function () {
 	/////////////////////shows //////////////
 	
 	var $Cont = $("#Cont"),
@@ -108,27 +108,32 @@ var $ = require('jquery');
 			'<h4 class="SearchNone-face icon-sad"></h4>' +
 			'<h4 class="SearchNone-info">lo sentimos no hemos encontrado en nuestra base de datos esta serie, intenta con las iniciales u otras series mas que están esperando para ti</h4>' +
 		'</div>');
-
-// shows
+// ingreso de localStorage
+	if(!localStorage.shows){
+		// shows con ajax promises
+		$.ajax('http://api.tvmaze.com/shows')
+			.then(function(shows){
+				$Cont.find('.loader').remove();
+				localStorage.shows = JSON.stringify(shows);
+				renderShows(shows);
+			})
+	}else{
+		setTimeout(function () {
+			$Cont.find('.loader').remove();
+			renderShows(JSON.parse(localStorage.shows));
+		}, 1);
+	}
+/*
+// shows con ajax
 	$.ajax({
 		url: 'http://api.tvmaze.com/shows',
 		success: function(shows, textStatus, xhr){
 			// console.log(shows);
-			// var $Cont = $("#Cont");
 			$Cont.find('.loader').remove();
-			// shows.forEach(function(show){
-			// 	var article =template
-			// 		.replace(':name:', show.name)
-			// 		.replace(':img:', show.image.medium)
-			// 		.replace(':img alt:', show.name + " logo")
-			// 		.replace(':language:', show.language);
-
-			// 	$Cont.append($(article));
-			// })
 			renderShows(shows);
 		}
 	})
-
+*/
 }
 
 module.exports = ajax;

@@ -22,6 +22,9 @@ var $ = require('jquery');
 	var loadCSS = require('./lib/loadCSS');
 	loadCSS('https://fonts.googleapis.com/css?family=Open+Sans|Lato:700italic');
 
+	var loadHeadImg = require('./lib/loadHeadImg');
+	loadHeadImg('./images/logoWebmagazine.png');
+
 	var ajax = require('./lib/ajax');
 	ajax();
 
